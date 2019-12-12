@@ -105,39 +105,44 @@ const data = [
 
 const articleSection = document.querySelector('.articles');
 
+data.forEach((content/*arbitrary variable*/) => { //step 4
+  articleSection.appendChild(createArticle(content.title, content.date, content.firstParagraph, content.secondParagraph, content.thirdParagraph));
+  
+});
 
-function createArticle(title, date, firstPpg, secondPpg, thirdPpg) {
+function createArticle(artTitle, artDate, firstPpg, secondPpg, thirdPpg) {
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
-  const firstParagraph = document.createElement('p');
-  const secondParagraph = document.createElement('p');
-  const thirdParagraph = document.createElement('p');
+  const first = document.createElement('p');
+  const second = document.createElement('p');
+  const third = document.createElement('p');
   const expandButton = document.createElement('span');
     
   // Setting up html structure
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
-  article.appendChild(firstParagraph);
-  article.appendChild(secondParagraph);
-  article.appendChild(thirdParagraph);
+  article.appendChild(first);
+  article.appendChild(second);
+  article.appendChild(third);
   article.appendChild(expandButton);
   
   //adding css classes back in
-  article.classList.add('article', 'close');
+  article.classList.add('article');
   articleDate.classList.add('date');
   expandButton.classList.add('expandButton');
   
   //adding text content
-  articleTitle.textContent = title;
-  articleDate.textContent = date;
-  firstParagraph.textContent = firstPpg;
-  secondParagraph.textContent = secondPpg;
-  thirdParagraph.textContent = thirdPpg;
-  
+  articleTitle.textContent = artTitle;
+  articleDate.textContent = artDate;
+  first.textContent = firstPpg;
+  second.textContent = secondPpg;
+  third.textContent = thirdPpg;
+  expandButton.textContent = "expand";
   
   expandButton.addEventListener('click', (e) => { //step 2
     article.classList.toggle('article-open');
+  
   
   });
   
