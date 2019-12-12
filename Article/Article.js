@@ -85,8 +85,36 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Surviving React', // step 5: added new article. Dexter ipsum.
+    date: 'Dec 12th, 2019',
+    firstParagraph: `Yeah... Sushi chef is possible. It wouldn't be my first choice but hey... You never know, there are no secrets in life, 
+          just hidden truths that lie beneath the surface, how would you know?`,
+
+    secondParagraph: `Knock it off! This is ridiculous. I could be killing him right now, harry was a great cop here in Miami. He taught me how 
+          to think like one; he taught me how to cover my tracks. I'm a very neat monster. I have standards, that's it. No more doughnuts for Masuka,
+          and I will. I can always see other people's problems more clearly than my own.`,
+
+    thirdParagraph: `Well, that's good, because you wouldn't want it to look like someone's playing tic-tac-toe on her head, look at that, 
+          steady as a surgeon, I'm a serial killer.`
+  },
+  {
+    title: 'Dom Dom Dom...', // step 5: added new article. Rick and Morty ipsum.
+    date: 'Dec 12th, 2019',
+    firstParagraph: `You can run, but you can't hide! Your failures are your own, old man! I say, follow throooough! Don't even trip about your pants, dawg. 
+          We got an extra pair right here. You don't have to try to impress me Morty.`,
+
+    secondParagraph: `Ooohhh can do. Morty! The principal and I have discussed it, a-a-and we're both insecure enough to agree to it! I turned myself 
+          into a pickle, Morty! Boom! Big reveal! I'm a pickle! What do you think about that? I turned myself into a pickle! W-what are you just staring at me for? 
+          I turned myself into a pickle, Morty.`,
+
+    thirdParagraph: `If I've learned one thing, it's that before you get anywhere in life, you gotta stop listening to yourself. If it were, you could call 
+          ME Ernest Hemingway. You want to see my first try, or should we go straight to the moment I discovered interdimensional travel? What is this, 90's Conan?`
   }
+
 ];
+
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
