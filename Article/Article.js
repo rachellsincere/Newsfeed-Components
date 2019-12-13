@@ -85,8 +85,36 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Surviving React', // step 5: added new article. Dexter ipsum.
+    date: 'Dec 12th, 2019',
+    firstParagraph: `Yeah... Sushi chef is possible. It wouldn't be my first choice but hey... You never know, there are no secrets in life, 
+          just hidden truths that lie beneath the surface, how would you know?`,
+
+    secondParagraph: `Knock it off! This is ridiculous. I could be killing him right now, harry was a great cop here in Miami. He taught me how 
+          to think like one; he taught me how to cover my tracks. I'm a very neat monster. I have standards, that's it. No more doughnuts for Masuka,
+          and I will. I can always see other people's problems more clearly than my own.`,
+
+    thirdParagraph: `Well, that's good, because you wouldn't want it to look like someone's playing tic-tac-toe on her head, look at that, 
+          steady as a surgeon, I'm a serial killer.`
+  },
+  {
+    title: 'Dom Dom Dom...', // step 5: added new article. Rick and Morty ipsum.
+    date: 'Dec 12th, 2019',
+    firstParagraph: `You can run, but you can't hide! Your failures are your own, old man! I say, follow throooough! Don't even trip about your pants, dawg. 
+          We got an extra pair right here. You don't have to try to impress me Morty.`,
+
+    secondParagraph: `Ooohhh can do. Morty! The principal and I have discussed it, a-a-and we're both insecure enough to agree to it! I turned myself 
+          into a pickle, Morty! Boom! Big reveal! I'm a pickle! What do you think about that? I turned myself into a pickle! W-what are you just staring at me for? 
+          I turned myself into a pickle, Morty.`,
+
+    thirdParagraph: `If I've learned one thing, it's that before you get anywhere in life, you gotta stop listening to yourself. If it were, you could call 
+          ME Ernest Hemingway. You want to see my first try, or should we go straight to the moment I discovered interdimensional travel? What is this, 90's Conan?`
   }
+
 ];
+
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
@@ -101,14 +129,61 @@ const data = [
 
   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above. */
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+const articleSection = document.querySelector('.articles');
 
-  Step 3: return the entire component.
+data.forEach((content/*arbitrary variable*/) => { //step 4
+  articleSection.appendChild(createArticle(content.title, content.date, content.firstParagraph, content.secondParagraph, content.thirdParagraph));
+  
+});
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+function createArticle(artTitle, artDate, firstPpg, secondPpg, thirdPpg) {
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const first = document.createElement('p');
+  const second = document.createElement('p');
+  const third = document.createElement('p');
+  const expandButton = document.createElement('span');
+    
+  // Setting up html structure
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(first);
+  article.appendChild(second);
+  article.appendChild(third);
+  article.appendChild(expandButton);
+  
+  //adding css classes back in
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('expandButton');
+  
+  //adding text content
+  articleTitle.textContent = artTitle;
+  articleDate.textContent = artDate;
+  first.textContent = firstPpg;
+  second.textContent = secondPpg;
+  third.textContent = thirdPpg;
+  expandButton.textContent = "expand";
+  
+  expandButton.addEventListener('click', (e) => { //step 2
+    article.classList.toggle('article-open');
+  
+  
+  });
+  
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  return article; //step 3
+  
+}
 
-*/
+
+  /* Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div. */
+
+  /* Step 3: return the entire component. */
+
+ /*  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div. */
+
+  /* Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article. */
